@@ -1,0 +1,18 @@
+-- TASK 1 - Transfer 100 from alice (id 1) to bob (id 2) in ONE transaction.
+--
+-- Requirements:
+--   * Wrap BOTH updates in a single transaction (BEGIN ... COMMIT).
+--   * Debit alice by 100 and credit bob by 100.
+--   * The debit must only happen if alice still has at least 100
+--     (so a balance can never go negative).
+--
+-- Because both updates are inside one transaction, if anything fails the whole
+-- transfer is undone (ROLLBACK) - alice is never debited without bob being credited.
+--
+-- Run your script with:
+--   psql -d ministore -f postgres/task1_transaction.sql
+-- Then check the result:
+--   psql -d ministore -c "SELECT owner, balance FROM accounts ORDER BY id;"
+-- Expected after a correct run: alice = 400, bob = 200.
+
+-- TODO: write your transaction below (BEGIN; the two UPDATE statements; COMMIT;)

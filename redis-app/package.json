@@ -1,0 +1,17 @@
+{
+  "name": "ministore-redis-app",
+  "version": "1.0.0",
+  "description": "A small Express + Redis app: cached product list, login sessions, and rate limiting. No database.",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "connect-redis": "^8.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "ioredis": "^5.4.2"
+  }
+}
